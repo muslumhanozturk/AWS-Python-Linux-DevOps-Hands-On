@@ -49,37 +49,37 @@ line 14
 Line 15
 ```
 
-- Show the first 10 lines of clarusway.txt.(clarusway.txt dosyasının ilk 10 satırını göster.)
+- Show the first 10 lines of clarusway.txt.
 
 ```bash
 head clarusway.txt
 ```
 
-- Show the first 5 lines of clarusway.txt.(clarusway.txt dosyasının ilk 5 satırını göster.)
+- Show the first 5 lines of clarusway.txt.
 
 ```bash
 head -5 clarusway.txt
 ```
 
-- Show the last 10 lines of clarusway.txt. clarusway.txt dosyasının son 10 satırını göster.
+- Show the last 10 lines of clarusway.txt.
 
 ```bash
 tail clarusway.txt
 ```
 
-- Show the last 5 lines of clarusway.txt. clarusway.txt dosyasının son 5 satırını göster.
+- Show the last 5 lines of clarusway.txt.
 
 ```bash
 tail -5 clarusway.txt
 ```
 
-- Display the clarusway.txt file on the screen. Ekranda clarusway.txt dosyasını görüntüleyin.
+- Display the clarusway.txt file on the screen.
 
 ```bash
 cat clarusway.txt
 ```
 
-- Create three files with echo command and name them file1 file2 file3. (echo komutuyla üç dosya oluşturun ve dosya1 dosya2 dosya3 olarak adlandırın.)
+- Create three files with echo command and name them file1 file2 file3.
 
 ```bash
 echo "this is file1" > file1
@@ -87,21 +87,22 @@ echo "this is file2" > file2
 echo "this is file3" > file3
 ```
 
-- Display the file1, file2 and file3 files on the screen. (Dosya1, dosya2 ve dosya3 dosyalarını ekranda görüntüleyin.)
+- Display the file1, file2 and file3 files on the screen.
 
 ```bash
 cat file1 file2 file3
 ```
 
-- Concatenate file1, file2 and file3 to `all.txt` file. (dosya1, dosya2 ve dosya3'ü "all.txt" dosyasına birleştirin.)
+- Concatenate file1, file2 and file3 to `all.txt` file.
 
 ```bash
 cat file1 file2 file3 > all.txt
 ```
 
-- Create a file with `cat` command.(`cat` komutuyla bir dosya oluşturun)
+- Create a file with `cat` command.
+
 ```bash
-cat > winter.txt 
+cat > summer.txt 
 Today is cold.
 Today is rainy
 ```
@@ -183,7 +184,7 @@ find /home -type f -empty
 - To find all 100MB files under home directory. 
 
 ```bash
-find /home -size 100M        #tam 100M lik dosya arıyor
+find /home -size 100M
 ```
 
 - Find all the files which are greater than 50MB and less than 100MB under home directory. Note that the `+` and `-` prefixes signify greater than and less than.
@@ -192,25 +193,25 @@ find /home -size 100M        #tam 100M lik dosya arıyor
 find /home -size +50M -size -100M
 ```
 
-- Find all the files which are modified 10 days ago in /home directory.( )
+- Find all the files which are modified 10 days ago in /home directory.
 
 ```bash
 find /home -mtime 10
 ```
 
-- Find all the files which are modified in the last 10 days in /home directory.( )
+- Find all the files which are modified in the last 10 days in /home directory.
 
 ```bash
 find /home -mtime -10
 ```
 
-- Find all the files which are modified in more than 10 days in /home directory. ( )
+- Find all the files which are modified in more than 10 days in /home directory.
 
 ```bash
 find /home -mtime +10
 ```
 
-- Find all the files which are modified more than 10 minutes back and less than 30 minutes in current folder.( )
+- Find all the files which are modified more than 10 minutes back and less than 30 minutes in current folder.
 
 ```bash
 find . -mmin +10 -mmin -30
@@ -218,7 +219,7 @@ find . -mmin +10 -mmin -30
 
 ### `grep` command
 
-Grep is a Linux / Unix command-line tool used to search for a string of characters in a specified file. ( )
+Grep is a Linux / Unix command-line tool used to search for a string of characters in a specified file. 
 
 - Create a file and name it `grep.txt`.
 
@@ -280,42 +281,42 @@ grep -w "ker" linux.txt
 grep -w "kernel" linux.txt
 ```
 
-- We can display the lines that are not matched with the specified search sting pattern using the -v option. (Belirtilen arama sting paterni ile eşleşmeyen satırları -v seçeneğini kullanarak görüntüleyebiliriz.)
+- We can display the lines that are not matched with the specified search sting pattern using the -v option. 
 
 ```bash
 grep -v "kernel" linux.txt
 ```
 
-- The `^` regular expression pattern specifies the start of a line. This can be used in grep to match the lines which start with the given string or pattern. (`^` düzenli ifade kalıbı, bir satırın başlangıcını belirtir. Bu, verilen dize veya desenle başlayan satırları eşleştirmek için grep'te kullanılabilir.)
+- The `^` regular expression pattern specifies the start of a line. This can be used in grep to match the lines which start with the given string or pattern. 
 
 ```bash
 grep "^li" clarusway.txt
 ```
 
-- The $ regular expression pattern specifies the end of a line. This can be used in grep to match the lines which end with the given string or pattern. ($ düzenli ifade kalıbı, bir satırın sonunu belirtir. Bu, verilen dize veya desenle biten satırları eşleştirmek için grep'te kullanılabilir.)
+- The $ regular expression pattern specifies the end of a line. This can be used in grep to match the lines which end with the given string or pattern.
 
 ```bash
 grep "kernel.$" linux.txt
 ```
 
-- Sometimes we need more content in search results to decide what is most relevant. For this, we can use the following operators to add the desired lines before, after a match, or both:(Bazen neyin en alakalı olduğuna karar vermek için arama sonuçlarında daha fazla içeriğe ihtiyaç duyarız. Bunun için, bir maçtan önce, sonra veya her ikisinden birden istenen satırları eklemek için aşağıdaki operatörleri kullanabiliriz:)
+- Sometimes we need more content in search results to decide what is most relevant. For this, we can use the following operators to add the desired lines before, after a match, or both:
 
     - Use -A and a number of lines to display after a match.
     
     ```bash
-    grep -A3 "line 5" clarusway.txt # this command prints three lines after the match.(bu komut, eşleşmeden sonra üç satır yazdırır.)
+    grep -A3 "line 5" clarusway.txt # this command prints three lines after the match.
     ```
 
     - Use -B and a number of lines to display before a match.
     
     ```bash
-    grep -B2 "line 5" clarusway.txt # this command prints two lines before the match.(bu komut, eşleşmeden önce iki satır yazdırır.)
+    grep -B2 "line 5" clarusway.txt # this command prints two lines before the match.
     ```
 
     - Use -C and a number of lines to display before and after the match.
     
     ```bash
-    grep -C4 "line 5" clarusway.txt # this command prints four lines before and after the match.(bu komut maçtan önce ve sonra dört satır yazdırır.)
+    grep -C4 "line 5" clarusway.txt # this command prints four lines before and after the match.
     ```
 
 - We can also use `grep` command with | (pipe).

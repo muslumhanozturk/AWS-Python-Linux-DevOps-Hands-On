@@ -1,5 +1,5 @@
 # Hands-on EC2-05 : Working with EC2 Snapshots
-
+Snapshot alınmadan önce instance stop edilmeli çünkü o anda yazılan yazılan bir dosya varsa veya çalışan bir program o diskle ilgili işlem yapıyorsa o aldığımız snapshot o işlemlerinde o andaki halini yedeklemiş olur. Eğer o işlem tamamlanmadıysa yada diske yazma işlemi daha bitmediyse bu da bu şekliyle ydeklenmiş olur ve daha sonra bu snapten ister yeni volume yaratırken isterde yeni sanal makine yaratırken her defasında sorun yaşarım.
 Purpose of the this hands-on training is to teach students how to take a snapshot of EC2 instance, create an image from EC2 instance and using Data Lifecycle Manager. 
 Bu uygulamalı eğitimin amacı, öğrencilere EC2 bulut sunucusunun anlık görüntüsünü almayı, EC2 bulut sunucusundan görüntü oluşturmayı ve Veri Yaşam Döngüsü Yöneticisi'ni kullanmayı öğretmektir.
 ## Learning Outcomes
