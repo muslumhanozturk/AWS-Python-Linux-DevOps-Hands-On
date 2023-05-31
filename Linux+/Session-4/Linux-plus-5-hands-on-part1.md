@@ -206,7 +206,7 @@ wc count.txt
 - Find how many users are there in the computer.
 
 ```bash
-wc -l /etc/passwd
+wc -l /etc/passwd     # wc -l kullanıldığında, komutun çıktısı sadece dosyanın kaç satırdan oluştuğunu gösterir.
 ```
 
 **sort**
