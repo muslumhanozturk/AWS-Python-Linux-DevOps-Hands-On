@@ -76,7 +76,7 @@ tail -5 clarusway.txt
 - Display the clarusway.txt file on the screen.
 
 ```bash
-cat clarusway.txt
+cat clarusway.txt      -n parametresiyle satırlar numaralı gösterilir.
 ```
 
 - Create three files with echo command and name them file1 file2 file3.
