@@ -26,7 +26,7 @@ At the end of the this hands-on training, students will be able to;
 
 ```bash
 mkdir linux-lessons
-cd linux-lessons
+cd linux-lessons           " - " parametresi çalıştığımız son iki dizin arasında geçiş yapar.
 ```
 
 - Create a `text` file named `clarusway.txt`.
