@@ -282,9 +282,10 @@ grep -w "kernel" linux.txt
 ```
 
 - We can display the lines that are not matched with the specified search sting pattern using the -v option. 
+- -v parametresi verilen ifadeyi içermeyen aramalar yapar.
 
 ```bash
-grep -v "kernel" linux.txt
+grep -v "kernel" linux.txt        " -r " parametresi alt dizinlerde de arama yapar.
 ```
 
 - The `^` regular expression pattern specifies the start of a line. This can be used in grep to match the lines which start with the given string or pattern. 
