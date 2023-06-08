@@ -295,11 +295,11 @@ chmod +x nested-if-statement.sh
 #!/bin/bash
 
 read -p "Input your name: " name
-read -sp "Input your password: " password
+read -sp "Input your password: " password      " -s " kullanıcının girdiği veriyi gizlemek için kullanılır.
 
 if [[ $name = $(whoami) ]] && [[ $password = Aa1234 ]]
 then
-  echo -e "\nWelcome $(whoami)"
+  echo -e "\nWelcome $(whoami)"     # " -e " kendinden sonra gelen \n kaçış dizininin kullanılabilmesi için kullanılır.
 else
   echo -e "\nIt is wrong account"
 fi
