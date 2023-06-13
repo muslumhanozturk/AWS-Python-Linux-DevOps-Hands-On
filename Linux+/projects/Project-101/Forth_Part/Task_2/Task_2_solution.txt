@@ -1,0 +1,2 @@
+#!/bin/bash
+sed 's/\\n/\n/g' certificate.pem > new.pem && echo "New pem file with multiline created" 
