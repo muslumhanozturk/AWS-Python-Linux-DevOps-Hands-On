@@ -1,1 +1,1 @@
-grep serdar -i event_history.csv | grep TerminateInstances | grep -Eo "i-[a-zA-Z0-9]{17}" | sort | uniq > ikinci_result.txt
+grep serdar -i event_history.csv | grep TerminateInstances | grep -Eo "i-[a-zA-Z0-9]{17}" | sort | uniq > result.txt
