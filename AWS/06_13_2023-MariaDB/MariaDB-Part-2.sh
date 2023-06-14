@@ -1,6 +1,6 @@
 # Part 2 - Connecting and Configuring MariaDB Database
 
-# Connect to the MariaDB Server and open MySQL CLI with root user, no password set as default.
+# Connect to the MariaDB Server and open MySQL CLI with root user, no password set as default.  # -u user
 mysql -u root
 
 # Show default databases in the MariaDB Server.
