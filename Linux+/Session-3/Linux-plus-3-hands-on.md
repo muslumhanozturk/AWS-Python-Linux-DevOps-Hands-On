@@ -178,3 +178,6 @@ cat /etc/group
 sudo gpasswd -d user7 aws    # delete a user to a group.
 cat /etc/group
 ```
+```
+sudo chown user5:aws linux-lessons   # dosyanın sahipliğini değiştirme gruba atama yapma
+```
