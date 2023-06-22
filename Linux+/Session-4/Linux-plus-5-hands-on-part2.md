@@ -271,7 +271,7 @@ sed.txt
 - We can find any string in any specific column. 
 
 ```bash
-awk '{ if($7 == "3") print $0;}' awk.txt
+awk '{ if($7 == "3") print $0}' awk.txt     # $0 tamamı
 ```
 
 **Output:**
