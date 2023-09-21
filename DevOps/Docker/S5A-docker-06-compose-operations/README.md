@@ -39,7 +39,7 @@ ssh -i .ssh/call-training.pem ec2-user@ec2-3-133-106-98.us-east-2.compute.amazon
 - Download the current stable release of `Docker Compose` executable.
 
 ```bash
-curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 ```
 
 - Apply executable permissions to the binary:
@@ -48,7 +48,7 @@ curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-comp
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-- Check if the `Docker Compose`is working. Should see something like `docker-compose version 1.26.2, build 1110ad01`
+- Check if the `Docker Compose`is working. Should see something like `Docker Compose version v2.20.3`
 
 ```bash
 docker-compose --version
@@ -100,7 +100,7 @@ flask
 redis
 ```
 
-- Create a Dockerfile which builds a Docker image and explain what it does.
+- Create a `Dockerfile` which builds a Docker image and explain what it does.
 
 ```text
 The image contains all the dependencies for the application, including Python itself.
@@ -114,7 +114,7 @@ The image contains all the dependencies for the application, including Python it
 8. Set the default command for the container to flask run.
 ```
 
-```bash
+```Dockerfile
 FROM python:3.7-alpine
 WORKDIR /code
 ENV FLASK_APP app.py
@@ -139,7 +139,7 @@ The web service uses an image that’s built from the Dockerfile in the current 
 The redis service uses a public Redis image pulled from the Docker Hub registry.
 ```
 
-```bash
+```yaml
 version: "3"
 services:
   web:

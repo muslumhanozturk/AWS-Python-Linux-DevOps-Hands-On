@@ -101,6 +101,8 @@ apiVersion: apps/v1
 kind: Deployment 
 metadata:
   name: web-flask-deploy
+  labels:
+    env: dev
 spec:
   replicas: 3 
   selector:  
@@ -139,10 +141,10 @@ kubectl get pods -o wide
 - We get an output like below.
 
 ```text
-NAME                                READY   STATUS    RESTARTS   AGE   IP               NODE
-web-flask-7cbb5f5967-24smj          1/1     Running   0          15m   172.16.166.175   node1
-web-flask-7cbb5f5967-94g6f          1/1     Running   0          15m   172.16.166.177   node1
-web-flask-7cbb5f5967-gjtkx          1/1     Running   0          15m   172.16.166.176   node1
+NAME                                READY   STATUS    RESTARTS   AGE   IP           NODE          NOMINATED NODE   READINESS GATES
+web-flask-deploy-5b59bc685f-2cwc2   1/1     Running   0          78s   10.244.1.5   kube-worker   <none>           <none>
+web-flask-deploy-5b59bc685f-b92fr   1/1     Running   0          78s   10.244.1.4   kube-worker   <none>           <none>
+web-flask-deploy-5b59bc685f-r2tb9   1/1     Running   0          78s   10.244.1.3   kube-worker   <none>           <none>
 ```
 
 In the output above, for each Pod the IPs are internal and specific to each instance. If we were to redeploy the application, then each time a new IP will be allocated.
@@ -170,7 +172,7 @@ spec:
 kubectl get pods
 kubectl apply -f forcurl.yaml
 kubectl exec -it forcurl -- sh
-/ # ping 10.244.1.19
+/ # ping 10.244.1.3
 ```
 
 - Show the Pods detailed information and learn their IP addresses again.
@@ -217,7 +219,7 @@ kind: Service
 metadata:
   name: web-flask-svc
   labels:
-    app: web-flask
+    env: dev
 spec:
   type: ClusterIP  
   ports:
@@ -252,17 +254,17 @@ kubectl describe svc web-flask-svc
 ```text
 Name:              web-flask-svc
 Namespace:         default
-Labels:            app=web-flask
+Labels:            env=dev
 Annotations:       <none>
 Selector:          app=web-flask
 Type:              ClusterIP
 IP Family Policy:  SingleStack
-IP Families:       IPv4 
-IP:                10.105.60.230
-IPs:               10.105.60.230
+IP Families:       IPv4
+IP:                10.109.125.55
+IPs:               10.109.125.55
 Port:              <unset>  3000/TCP
 TargetPort:        5000/TCP
-Endpoints:         172.16.180.5:5000,172.16.180.6:5000
+Endpoints:         10.244.1.7:5000,10.244.1.8:5000,10.244.1.9:5000
 Session Affinity:  None
 Events:            <none>
 ```
@@ -287,7 +289,7 @@ kind: Service
 metadata:
   name: web-flask-svc
   labels:
-    app: web-flask
+    env: dev
 spec:
   type: NodePort  
   ports:
@@ -327,7 +329,7 @@ kind: Service
 metadata:
   name: web-flask-svc
   labels:
-    app: web-flask
+    env: dev
 spec:
   type: NodePort 
   ports:
@@ -419,7 +421,7 @@ kind: Deployment
 metadata:
   name: web-flask-deploy
   labels:
-    app: web-flask
+    env: dev
   namespace: demo
 spec:
   replicas: 3
@@ -453,7 +455,7 @@ metadata:
   name: web-flask-svc
   namespace: demo
   labels:
-    app: web-flask
+    env: dev
 spec:
   type: NodePort
   ports:
