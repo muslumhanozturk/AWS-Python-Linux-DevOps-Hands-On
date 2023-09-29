@@ -1,0 +1,4 @@
+### Pulling part file from github
+```bash
+curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz"    
+```
