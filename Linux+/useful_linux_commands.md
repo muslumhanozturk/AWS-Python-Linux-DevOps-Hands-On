@@ -6,3 +6,7 @@ curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$
 ```bash
 tar -xvf mysql-*.tgz  
 ```
+
+```bash
+scp -i <pem file> <pem file> ec2-user@<public DNS name of Control Node>:/home/ec2-user
+```
