@@ -1,4 +1,4 @@
-###Güvenlik İzleme ve Olay Kaydı İnceleme
+### Güvenlik İzleme ve Olay Kaydı İnceleme
 ###1. Güvenlik İzleme Dizinini Oluşturma
 ```bash
 mkdir /var/log/güvenlik
